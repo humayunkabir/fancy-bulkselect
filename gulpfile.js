@@ -47,7 +47,8 @@ gulp.task('js', () => gulp.src('js/*.js')
   .pipe(rename({
     suffix: '.min',
   }))
-  .pipe(gulp.dest('dist/js/')));
+  .pipe(gulp.dest('dist/js/'))
+  .pipe(gulp.dest('docs/js/')));
 
 
 /*-----------------------------------------------

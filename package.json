@@ -1,6 +1,6 @@
 {
   "name": "fancy-bulkselect",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Fancy Bulk Select allows users to check multiple checkboxes at once and toggles a UI for bulk actions to be performed for the selected items.",
   "main": "index.js",
   "scripts": {
