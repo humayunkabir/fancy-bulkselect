@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/humayunkabir/fancy-bulkselect/issues"
   },
-  "homepage": "https://github.com/humayunkabir/fancy-bulkselect#readme",
+  "homepage": "https://humayunkabir.github.io/fancy-bulkselect/",
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
