@@ -21,31 +21,33 @@
         </div>
         <div class="card-body">
           <p>Bulk select allows users to check multiple checkboxes at once and toggles a UI for bulk actions to be performed for the selected items.</p><strong>Bulk select consist of four main parts:</strong>
-          <ol class="mb-0">
+          <ol>
             <li>The main checkbox, which is used for checking all the other checkboxes, the class <code>checkbox-bulk-select</code> is used to define that item.</li>
             <li>The target checkboxes are wrapped using a unique id, in this example <code>bulk-select-body</code>. Every targeted checkbox within this wrapper is marked as <code>checkbox-bulk-select-target</code>. The id <code>bulk-select-body</code> is used to hook it to the main checkbox with <code>data-checkbox-body="#bulk-select-body"</code></li>
             <li>The element with id <code>bulk-select-actions</code> will be toggled by checking the main checkbox, which is hooked using <code>data-checkbox-actions="#bulk-select-actions"</code></li>
             <li>Bulk select actions will be replaced with the content of <code>bulk-select-replace-element </code>id, which is hooked using <code>data-checkbox-replaced-element="#bulk-select-replace-element"</code></li>
-          </ol>
-        </div><img class="card-img-bottom" src="img/fancy-bulkselect.png" alt="bulk-select" />
+          </ol><img class="img-fluid rounded" src="img/fancy-bulkselect.png" alt="bulk-select" />
+        </div>
       </div>
       <div class="card">
-        <div class="card-header bg-dark d-flex align-items-center justify-content-between">
-          <h5 class="mb-0 text-white">Example</h5>
-          <div id="bulk-select-replace-element">
-            <button class="btn btn-outline-light btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="ml-1">New</span></button>
-          </div>
-          <div class="d-none ml-3" id="bulk-select-actions">
-            <div class="input-group input-group-sm">
+        <div class="card-header bg-dark">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="mb-0 text-white">Example</h5>
+            <div id="bulk-select-replace-element">
+              <button class="btn btn-outline-light btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="ml-1">New</span></button>
+            </div>
+            <div class="d-none ml-3" id="bulk-select-actions">
+              <div class="input-group input-group-sm">
 
-              <select class="custom-select" aria-label="Bulk actions">
-                <option selected="">Bulk actions</option>
-                <option value="Delete">Delete</option>
-                <option value="Archive">Archive</option>
-              </select>
+                <select class="custom-select" aria-label="Bulk actions">
+                  <option selected="">Bulk actions</option>
+                  <option value="Delete">Delete</option>
+                  <option value="Archive">Archive</option>
+                </select>
 
-              <button class="btn btn-outline-light btn-sm ml-2" type="button">Apply</button>
+                <button class="btn btn-outline-light btn-sm ml-2" type="button">Apply</button>
 
+              </div>
             </div>
           </div>
         </div>
