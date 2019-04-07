@@ -1,0 +1,98 @@
+include _mixins
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Fancy Bulk Select
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    link(rel='stylesheet', href='css/style.css')
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous")
+    script(defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous")
+    script(src="../dist/js/fancy-bulkselect.min.js")
+  body
+    .container.py-5
+      .card.mb-3
+        .card-header.bg-dark
+          h5.mb-0.text-white Fancy Bulk Select
+        .card-body
+          p Bulk select allows users to check multiple checkboxes at once and toggles a UI for bulk actions to be performed for the selected items.
+          strong Bulk select consist of four main parts:
+          ol.mb-0
+            li The main checkbox, which is used for checking all the other checkboxes, the class 
+              code checkbox-bulk-select
+              |  is used to define that item.
+            li The target checkboxes are wrapped using a unique id, in this example 
+              code bulk-select-body
+              | . Every targeted checkbox within this wrapper is marked as 
+              code checkbox-bulk-select-target
+              | . The id 
+              code bulk-select-body
+              |  is used to hook it to the main checkbox with 
+              code data-checkbox-body="#bulk-select-body"
+            li The element with id 
+              code bulk-select-actions
+              |  will be toggled by checking the main checkbox, which is hooked using 
+              code data-checkbox-actions="#bulk-select-actions"
+            li Bulk select actions will be replaced with the content of 
+              code bulk-select-replace-element 
+              | id, which is hooked using 
+              code data-checkbox-replaced-element="#bulk-select-replace-element"
+        img.card-img-bottom(src='img/fancy-bulkselect.png' alt="bulk-select")
+      .card
+        .card-header.bg-dark.d-flex.align-items-center.justify-content-between
+          h5.mb-0.text-white Example
+          #bulk-select-replace-element
+            button(type='button').btn.btn-outline-light.btn-sm
+              span.fas.fa-plus(data-fa-transform="shrink-3 down-2")
+              span.ml-1 New
+          #bulk-select-actions.d-none.ml-3
+            .input-group.input-group-sm
+              = '\n'
+              select.custom-select(aria-label='Bulk actions')
+                option(selected='') Bulk actions
+                option(value='Delete') Delete
+                option(value='Archive') Archive
+              = '\n'
+              button.btn.btn-outline-light.btn-sm.ml-2(type='button') Apply
+              = '\n'
+        .card-body.p-0
+          .table-responsive
+            table.table.mb-0
+              thead.text-black
+                tr
+                  th.align-middle.white-space-nowrap
+                    .custom-control.custom-checkbox.ml-3
+                      = '\n'
+                      input.custom-control-input.checkbox-bulk-select#checkbox-bulk-select(
+                        type='checkbox' 
+                        data-checkbox-body="#bulk-select-body" 
+                        data-checkbox-actions="#bulk-select-actions"
+                        data-checkbox-replaced-element="#bulk-select-replace-element"
+                      )
+                      = '\n'
+                      label.custom-control-label(for='checkbox-bulk-select')
+                      = '\n'
+                  th.align-middle Name
+                  th.align-middle Nationality 
+                  th.align-middle Gender
+                  th.align-middle.white-space-nowrap.pr-3 Age
+              
+              tbody#bulk-select-body
+                each row in rows
+                  tr
+                    td.align-middle.white-space-nowrap
+                      .custom-control.custom-checkbox.ml-3
+                        = '\n'
+                        input.custom-control-input.checkbox-bulk-select-target(type='checkbox' id=`checkbox-${row.id}`)
+                        = '\n'
+                        label.custom-control-label(for=`checkbox-${row.id}`)
+                        = '\n'
+                    th.align-middle=row.name
+                    td.align-middle=row.nationality
+                    td.align-middle=row.gender
+                    td.align-middle.white-space-nowrap.text-right.pr-3=row.age
+        .card-footer.border-top
+          small showing #{rows.length} of 342

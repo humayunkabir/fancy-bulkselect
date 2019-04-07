@@ -1,0 +1,43 @@
+{
+  "name": "fancy-bulkselect",
+  "version": "0.1.0",
+  "description": "Fancy Bulk Select allows users to check multiple checkboxes at once and toggles a UI for bulk actions to be performed for the selected items.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humayunkabir/fancy-bulkselect.git"
+  },
+  "keywords": [],
+  "author": "Humayun kabir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/humayunkabir/fancy-bulkselect/issues"
+  },
+  "homepage": "https://github.com/humayunkabir/fancy-bulkselect#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
+    "babel-plugin-transform-strict-mode": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-jsbeautifier": "^3.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.2",
+    "pretty": "^2.0.0",
+    "pug": "^2.0.3"
+  }
+}
